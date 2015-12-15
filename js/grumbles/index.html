@@ -1,0 +1,19 @@
+<h2>I'm the Grumbles Joe Index</h2>
+<div ng-repeat="grumble in GrumbleIndexViewModel.grumbles">
+  <a data-ui-sref="grumbleShow({id: $index})">{{grumble.title}} </a>
+  <button class ='edit' ng-click='GrumbleIndexViewModel.edit($index); editGrumble = !editGrumble'>Edit Grumble</button>
+  <button ng-click="GrumbleIndexViewModel.delete($index)">Delete</button>
+  <form ng-show='editGrumble'>
+    <label>Title</label>
+    <input type="text" name="title" ng-model="GrumbleIndexViewModel.title">
+    <button class="new" ng-click="GrumbleIndexViewModel.update($index); editGrumble = !editGrumble">Save</button>
+    <button ng-click='editGrumble = !editGrumble' class='cancel'>Cancel</button>
+  </div>
+
+
+  <label>Title</label>
+  <input data-ng-model="GrumbleIndexViewModel.newGrumble.title">
+  <button data-ng-click="GrumbleIndexViewModel.create()">Create</button>
+
+  <!-- <input type="text" name="title" ng-model="GrumbleIndexViewModel.title">
+  <input type="submit"> -->
